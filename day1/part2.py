@@ -7,5 +7,4 @@ for line in open("input.txt").read().split('\n'):
         totals.append(curr_total)
         curr_total = 0
 totals.sort()
-totals.reverse()
-print(sum(totals[0:3]))
+print(sum(totals[-3:]))
