@@ -1,14 +1,12 @@
-move_id = {'A': 1, 'B': 2, 'C': 3}
 outcomes = {
-    'Z': {1: 8, 2: 9, 3: 7}, # Z > win
-    'X': {1: 3, 2: 1, 3: 2}, # X > lose
-    'Y': {1: 4, 2: 5, 3: 6}  # Y > draw
+    'Z': {'A': 8, 'B': 9, 'C': 7}, # Z > win
+    'X': {'A': 3, 'B': 1, 'C': 2}, # X > lose
+    'Y': {'A': 4, 'B': 5, 'C': 6}  # Y > draw
 }
 score = 0
 
 with open("input.txt") as file:
     for line in file.read().split('\n'):
-        elf_move = move_id[line.split(' ')[0]]
-        score += outcomes[line.split(' ')[1]][elf_move]
+        score += outcomes[line.split(' ')[1]][line.split(' ')[0]]
 
 print(score)
